@@ -101,9 +101,9 @@ multipass restart primary
 
 ########## Installing necessary packages inside multipass primary instance
 multipass exec primary -- sudo apt install -y g++ aptitude aptitude-doc-en gcc-doc  binutils-doc make make-doc git  git-doc valgrind valgrind-dbg systemtap systemtap-doc linux-tools-generic linux-tools-common errno cpp-doc gdb-doc libboost-test-dev libboost-doc gtk3-binver-3.0.0 libgtk-3-dev
-multipass exec primary -- sudo snap set system refresh.retain=2
-multipass exec primary -- sudo snap install cmake --classic
-multipass exec primary -- sudo apt-get install -y dpkg-dev --no-install-recommends
+# multipass exec primary -- sudo snap set system refresh.retain=2
+multipass exec primary --working-directory /home/ubuntu -- sudo snap install cmake --classic
+multipass exec primary --working-directory /home/ubuntu -- sudo apt-get install -y dpkg-dev --no-install-recommends
 
 
 # don't need this
