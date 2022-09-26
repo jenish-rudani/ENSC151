@@ -12,3 +12,12 @@ echo 'BOOST_POSTFIX=""' | sudo tee -a /etc/environment
 echo 'BOOST_DEBUG_POSTFIX=""' | sudo tee -a /etc/environment
 echo '# to enable reverse debugging with gdb' | sudo tee -a /etc/environment
 echo 'LD_BIND_NOW=1' | sudo tee -a /etc/environment
+
+sudo ln -s /home/ubuntu /home/xubuntu
+
+#  we need to run this script later in the process, after eclipse is insstalled
+#  update /home/ubuntu/eclipse so that 
+#-Dosgi.instance.area.default=@user.home/eclipse-workspace
+#  becomes
+#-Dosgi.instance.area.default=/home/ubuntu/VMsf/eclipse-workspace-22-06
+
