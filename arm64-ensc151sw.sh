@@ -12,7 +12,6 @@ then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
   eval "$(/opt/homebrew/bin/brew shellenv)"
-#  exit
 else
   echo -e "${RED}Homebrew is Already Installed.${NC} [SKIPPING]"
 fi
@@ -23,7 +22,6 @@ then
   echo -e "${RED}brew git could not be found"
   echo -e "Installing brew git... (Enter your PASSWORD if needed)"
   brew install git
-#  exit
 else
   echo -e "${RED}brew git is Already Installed.${NC} [SKIPPING]"
 fi
@@ -34,14 +32,15 @@ then
   echo -e "${RED}multipass could not be found"
   echo -e "Installing multipass... (Enter your PASSWORD when requested)"
   brew install multipass
-#  exit
 else
   echo -e "${RED}Multipass is Already Installed.${NC} [SKIPPING]"
 fi
-
+ 
+mkdir -p ~/Public/VMsf-22_04/eclipse-workspace-22-06
 SHARED_DIR_PATH=~/Public/VMsf-22_04
 SHELL_SCRIPT_TO_RUN_ON_INSTANCE=./instanceCommandsClean.sh
 SSH_DIR_PATH=~/.ssh
+
 
 ######### Shared Directory
 if [ -d $SHARED_DIR_PATH ] 
@@ -50,8 +49,11 @@ then
 else
   echo -e "Creating an Empty Directory: $SHARED_DIR_PATH "
   mkdir $SHARED_DIR_PATH
-  cp $SHELL_SCRIPT_TO_RUN_ON_INSTANCE $SHARED_DIR_PATH
 fi
+
+# Copy these files
+cp $SHELL_SCRIPT_TO_RUN_ON_INSTANCE $SHARED_DIR_PATH
+cp ./postEclipseInstallationCommands.sh $SHARED_DIR_PATH
 
 ######### SSH Directory
 if [ -d $SSH_DIR_PATH ] 
@@ -84,7 +86,7 @@ else
            #    It seems to take time for Multipass to be available after it is installed.
 fi
 
-########## Check if Prinary Instance installed on Multipass 
+########## Check if Primary Instance installed on Multipass 
 multipass list | grep 'primary' &> /dev/null
 if [ $? == 0 ]; then
   echo -e "${RED}primary instance is already installed.${NC} [Need to Purge it]"
@@ -98,32 +100,35 @@ multipass launch 22.04 -n primary -c 4 -m 4G -d 50G
 
 multipass exec primary -- bash -c "echo `cat $RSA_KEY_FILE_PATH.pub` >> ~/.ssh/authorized_keys"
 
-########## Mount $HOME on the instance
+# ########## Mount $HOME on the instance
 multipass mount $SHARED_DIR_PATH primary:/home/ubuntu/VMsf
 
-########## Execute SHELL_SCRIPT_TO_RUN_ON_INSTANCE on Instance
+# ########## Execute SHELL_SCRIPT_TO_RUN_ON_INSTANCE on Instance
 multipass exec primary -- source /home/ubuntu/VMsf/instanceCommandsClean.sh
 
-########## Updating and Upgrading ubuntu instance
+# ########## Updating and Upgrading ubuntu instance
 multipass exec primary -- sudo apt-mark hold linux-image-generic linux-headers-generic grub-efi*
 multipass exec primary -- sudo apt update
 multipass exec primary -- sudo apt upgrade -y
 
-########## Reboot Primary Instance for upgrade to take effect
+# ########## Reboot Primary Instance for upgrade to take effect
 multipass restart primary
 
-########## Installing necessary packages inside multipass primary instance
+# ########## Installing necessary packages inside multipass primary instance
 multipass exec primary -- sudo apt install -y g++ aptitude aptitude-doc-en gcc-doc  binutils-doc make make-doc git  git-doc valgrind valgrind-dbg systemtap systemtap-doc linux-tools-generic linux-tools-common errno cpp-doc gdb-doc libboost-test-dev libboost-doc gtk3-binver-3.0.0 libgtk-3-dev
 # multipass exec primary -- sudo snap set system refresh.retain=2
 multipass exec primary --working-directory /home/ubuntu -- sudo snap install cmake --classic
 multipass exec primary --working-directory /home/ubuntu -- sudo apt-get install -y dpkg-dev --no-install-recommends
 
 
-# don't need this
-# multipass exec primary -- sudo apt install -y openjdk-8-jre # // do we need more (or less), like (only) openjdk-8-jre-headless
+# # don't need this
+# # multipass exec primary -- sudo apt install -y openjdk-8-jre # // do we need more (or less), like (only) openjdk-8-jre-headless
 
 ########## Installing Eclipse
 multipass exec primary --working-directory /home/ubuntu/VMsf -- wget https://eclipse.mirror.rafal.ca/technology/epp/downloads/release/2022-06/R/eclipse-cpp-2022-06-R-linux-gtk-aarch64.tar.gz
 multipass exec primary --working-directory /home/ubuntu -- tar -xvzf VMsf/eclipse-cpp-2022-06-R-linux-gtk-aarch64.tar.gz >> tar.log
 multipass exec primary --working-directory /home/ubuntu -- rm VMsf/eclipse-cpp-2022-06-R-linux-gtk-aarch64.tar.gz
 
+# ########## Changin default user space in Eclipse
+multipass mount $SHARED_DIR_PATH primary:/home/ubuntu/VMsf
+multipass exec primary --working-directory /home/ubuntu/VMsf -- source /home/ubuntu/VMsf/postEclipseInstallationCommands.sh
