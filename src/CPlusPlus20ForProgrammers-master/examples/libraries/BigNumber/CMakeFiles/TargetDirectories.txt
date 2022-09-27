@@ -1,0 +1,8 @@
+/home/xubuntu/src/CPlusPlus20ForProgrammers-master/examples/libraries/BigNumber/CMakeFiles/BigNumber.dir
+/home/xubuntu/src/CPlusPlus20ForProgrammers-master/examples/libraries/BigNumber/CMakeFiles/BigNumberRun.dir
+/home/xubuntu/src/CPlusPlus20ForProgrammers-master/examples/libraries/BigNumber/CMakeFiles/edit_cache.dir
+/home/xubuntu/src/CPlusPlus20ForProgrammers-master/examples/libraries/BigNumber/CMakeFiles/rebuild_cache.dir
+/home/xubuntu/src/CPlusPlus20ForProgrammers-master/examples/libraries/BigNumber/CMakeFiles/list_install_components.dir
+/home/xubuntu/src/CPlusPlus20ForProgrammers-master/examples/libraries/BigNumber/CMakeFiles/install.dir
+/home/xubuntu/src/CPlusPlus20ForProgrammers-master/examples/libraries/BigNumber/CMakeFiles/install/local.dir
+/home/xubuntu/src/CPlusPlus20ForProgrammers-master/examples/libraries/BigNumber/CMakeFiles/install/strip.dir

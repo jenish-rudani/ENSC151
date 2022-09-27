@@ -1,0 +1,6 @@
+/home/xubuntu/src/CPlusPlus20ForProgrammers-master/examples/libraries/miniz-cpp/CMakeFiles/miniz-cpp.test.dir
+/home/xubuntu/src/CPlusPlus20ForProgrammers-master/examples/libraries/miniz-cpp/CMakeFiles/example-pipe.dir
+/home/xubuntu/src/CPlusPlus20ForProgrammers-master/examples/libraries/miniz-cpp/CMakeFiles/example-read.dir
+/home/xubuntu/src/CPlusPlus20ForProgrammers-master/examples/libraries/miniz-cpp/CMakeFiles/example-write.dir
+/home/xubuntu/src/CPlusPlus20ForProgrammers-master/examples/libraries/miniz-cpp/CMakeFiles/edit_cache.dir
+/home/xubuntu/src/CPlusPlus20ForProgrammers-master/examples/libraries/miniz-cpp/CMakeFiles/rebuild_cache.dir

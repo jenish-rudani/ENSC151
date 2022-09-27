@@ -1,0 +1,17 @@
+/usr/local/include/gsl/gsl_assert
+/usr/local/include/gsl/string_span
+/usr/local/include/gsl/pointers
+/usr/local/include/gsl/algorithm
+/usr/local/include/gsl/gsl_narrow
+/usr/local/include/gsl/gsl_algorithm
+/usr/local/include/gsl/util
+/usr/local/include/gsl/assert
+/usr/local/include/gsl/narrow
+/usr/local/include/gsl/gsl_byte
+/usr/local/include/gsl/byte
+/usr/local/include/gsl/span_ext
+/usr/local/include/gsl/span
+/usr/local/include/gsl/gsl
+/usr/local/include/gsl/gsl_util
+/usr/local/share/cmake/Microsoft.GSL/Microsoft.GSLConfig.cmake
+/usr/local/share/cmake/Microsoft.GSL/Microsoft.GSLConfigVersion.cmake

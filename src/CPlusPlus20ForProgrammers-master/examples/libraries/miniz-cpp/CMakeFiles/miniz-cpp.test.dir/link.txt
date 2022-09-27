@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic "CMakeFiles/miniz-cpp.test.dir/tests/test.cpp.o" -o miniz-cpp.test 

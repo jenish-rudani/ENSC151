@@ -1,0 +1,4 @@
+/home/xubuntu/Library/Frameworks/BigNumber/lib/libBigNumber.a
+/home/xubuntu/Library/Frameworks/BigNumber/include/bignumber.h
+/home/xubuntu/src/CPlusPlus20ForProgrammers-master/examples/libraries/BigNumber/bin/BigNumber/lib/libBigNumber.a
+/home/xubuntu/src/CPlusPlus20ForProgrammers-master/examples/libraries/BigNumber/bin/BigNumber/include/bignumber.h

@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wextra -Weffc++ -pedantic -Wno-unused-function -std=c++14 -g -rdynamic CMakeFiles/BigNumberRun.dir/src/bignumber.cpp.o CMakeFiles/BigNumberRun.dir/main.cpp.o -o BigNumberRun 

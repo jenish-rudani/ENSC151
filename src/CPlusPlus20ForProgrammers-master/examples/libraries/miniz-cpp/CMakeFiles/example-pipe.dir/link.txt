@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic "CMakeFiles/example-pipe.dir/examples/pipe.cpp.o" -o example-pipe 

@@ -1,0 +1,1 @@
+/usr/bin/c++ -Werror -Wall -g -Wextra -Wshadow -pedantic -Wold-style-cast  -m32 CMakeFiles/test_atomic_32.dir/atomic.cpp.o -o test_atomic_32 
