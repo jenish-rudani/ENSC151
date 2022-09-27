@@ -86,48 +86,48 @@ else
            #    It seems to take time for Multipass to be available after it is installed.
 fi
 
-########## Check if Primary Instance installed on Multipass 
-multipass list | grep 'primary' &> /dev/null
-if [ $? == 0 ]; then
-  echo -e "${RED}primary instance is already installed.${NC} [Need to Purge it]"
-  echo -e "${RED}Purging 'primary instance'${NC}"
-  multipass delete -p primary
-fi
+# ########## Check if Primary Instance installed on Multipass 
+# multipass list | grep 'primary' &> /dev/null
+# if [ $? == 0 ]; then
+#   echo -e "${RED}primary instance is already installed.${NC} [Need to Purge it]"
+#   echo -e "${RED}Purging 'primary instance'${NC}"
+#   multipass delete -p primary
+# fi
 
-########## Create Primary Instances
-echo -e "${GREEN}Creating 'primary instance'${NC}"
-multipass launch 22.04 -n primary -c 4 -m 4G -d 50G 
+# ########## Create Primary Instances
+# echo -e "${GREEN}Creating 'primary instance'${NC}"
+# multipass launch 22.04 -n primary -c 4 -m 4G -d 50G 
 
-multipass exec primary -- bash -c "echo `cat $RSA_KEY_FILE_PATH.pub` >> ~/.ssh/authorized_keys"
+# multipass exec primary -- bash -c "echo `cat $RSA_KEY_FILE_PATH.pub` >> ~/.ssh/authorized_keys"
 
-# ########## Mount $HOME on the instance
-multipass mount $SHARED_DIR_PATH primary:/home/ubuntu/VMsf
+# # ########## Mount $HOME on the instance
+# multipass mount $SHARED_DIR_PATH primary:/home/ubuntu/VMsf
 
-# ########## Execute SHELL_SCRIPT_TO_RUN_ON_INSTANCE on Instance
-multipass exec primary -- source /home/ubuntu/VMsf/instanceCommandsClean.sh
+# # ########## Execute SHELL_SCRIPT_TO_RUN_ON_INSTANCE on Instance
+# multipass exec primary -- source /home/ubuntu/VMsf/instanceCommandsClean.sh
 
-# ########## Updating and Upgrading ubuntu instance
-multipass exec primary -- sudo apt-mark hold linux-image-generic linux-headers-generic grub-efi*
-multipass exec primary -- sudo apt update
-multipass exec primary -- sudo apt upgrade -y
+# # ########## Updating and Upgrading ubuntu instance
+# multipass exec primary -- sudo apt-mark hold linux-image-generic linux-headers-generic grub-efi*
+# multipass exec primary -- sudo apt update
+# multipass exec primary -- sudo apt upgrade -y
 
-# ########## Reboot Primary Instance for upgrade to take effect
-multipass restart primary
+# # ########## Reboot Primary Instance for upgrade to take effect
+# multipass restart primary
 
-# ########## Installing necessary packages inside multipass primary instance
-multipass exec primary -- sudo apt install -y g++ aptitude aptitude-doc-en gcc-doc  binutils-doc make make-doc git  git-doc valgrind valgrind-dbg systemtap systemtap-doc linux-tools-generic linux-tools-common errno cpp-doc gdb-doc libboost-test-dev libboost-doc gtk3-binver-3.0.0 libgtk-3-dev
-# multipass exec primary -- sudo snap set system refresh.retain=2
-multipass exec primary --working-directory /home/ubuntu -- sudo snap install cmake --classic
-multipass exec primary --working-directory /home/ubuntu -- sudo apt-get install -y dpkg-dev --no-install-recommends
+# # ########## Installing necessary packages inside multipass primary instance
+# multipass exec primary -- sudo apt install -y g++ aptitude aptitude-doc-en gcc-doc  binutils-doc make make-doc git  git-doc valgrind valgrind-dbg systemtap systemtap-doc linux-tools-generic linux-tools-common errno cpp-doc gdb-doc libboost-test-dev libboost-doc gtk3-binver-3.0.0 libgtk-3-dev
+# # multipass exec primary -- sudo snap set system refresh.retain=2
+# multipass exec primary --working-directory /home/ubuntu -- sudo snap install cmake --classic
+# multipass exec primary --working-directory /home/ubuntu -- sudo apt-get install -y dpkg-dev --no-install-recommends
 
 
-# # don't need this
-# # multipass exec primary -- sudo apt install -y openjdk-8-jre # // do we need more (or less), like (only) openjdk-8-jre-headless
+# # # don't need this
+# # # multipass exec primary -- sudo apt install -y openjdk-8-jre # // do we need more (or less), like (only) openjdk-8-jre-headless
 
-########## Installing Eclipse
-multipass exec primary --working-directory /home/ubuntu/VMsf -- wget https://eclipse.mirror.rafal.ca/technology/epp/downloads/release/2022-06/R/eclipse-cpp-2022-06-R-linux-gtk-aarch64.tar.gz
-multipass exec primary --working-directory /home/ubuntu -- tar -xvzf VMsf/eclipse-cpp-2022-06-R-linux-gtk-aarch64.tar.gz >> tar.log
-multipass exec primary --working-directory /home/ubuntu -- rm VMsf/eclipse-cpp-2022-06-R-linux-gtk-aarch64.tar.gz
+# ########## Installing Eclipse
+# multipass exec primary --working-directory /home/ubuntu/VMsf -- wget https://eclipse.mirror.rafal.ca/technology/epp/downloads/release/2022-06/R/eclipse-cpp-2022-06-R-linux-gtk-aarch64.tar.gz
+# multipass exec primary --working-directory /home/ubuntu -- tar -xvzf VMsf/eclipse-cpp-2022-06-R-linux-gtk-aarch64.tar.gz >> tar.log
+# multipass exec primary --working-directory /home/ubuntu -- rm VMsf/eclipse-cpp-2022-06-R-linux-gtk-aarch64.tar.gz
 
 # ########## Changin default user space in Eclipse
 multipass mount $SHARED_DIR_PATH primary:/home/ubuntu/VMsf
