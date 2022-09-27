@@ -54,7 +54,7 @@ fi
 # Copy these files
 cp $SHELL_SCRIPT_TO_RUN_ON_INSTANCE $SHARED_DIR_PATH
 cp ./postEclipseInstallationCommands.sh $SHARED_DIR_PATH
-
+cp -R src $SHARED_DIR_PATH
 ######### SSH Directory
 if [ -d $SSH_DIR_PATH ] 
 then
