@@ -1,5 +1,11 @@
 # ENSC151
 
+## ![#f03c15](https://via.placeholder.com/15/f03c15/f03c15.png) `Please make sure that you turn off auto sleep feature on Macbook for the duration of installation of following packages. You can turn it back on after you successfully follow steps given below`
+
+> Go to System Prefrences > Battery.
+> Then, turn on the first checkbox as per image below
+![Slepp Turn Off Instructions](Mac_System_Preferences.png?raw=true "Slepp Turn Off Instructions")
+
 ## Homebrew Installation Instructions
 
 Open Terminal and type following commands ONE by ONE
