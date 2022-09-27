@@ -4,14 +4,15 @@ GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
+
 ######### Homebrew
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
 if ! command -v brew &> /dev/null
 then
   echo -e "${RED}Homebrew could not be found${NC}"
   echo -e "${GREEN}Installing Homebrew... (You will need Enter your PASSWORD and press ENTER)${NC}"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-  eval "$(/opt/homebrew/bin/brew shellenv)"
 else
   echo -e "${RED}Homebrew is Already Installed.${NC} [SKIPPING]"
 fi
