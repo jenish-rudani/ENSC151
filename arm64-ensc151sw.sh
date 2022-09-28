@@ -37,7 +37,7 @@ else
   echo -e "${RED}Multipass is Already Installed.${NC} [SKIPPING]"
 fi
  
-mkdir -p ~/Public/VMsf-22_04/eclipse-workspace-22-06
+mkdir -p ~/Public/VMsf-22_04/eclipse-workspace_22-06
 SHARED_DIR_PATH=~/Public/VMsf-22_04
 SHELL_SCRIPT_TO_RUN_ON_INSTANCE=./instanceCommandsClean.sh
 SSH_DIR_PATH=~/.ssh
