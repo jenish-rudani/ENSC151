@@ -1,0 +1,8 @@
+11:33:01 **** Clean-only build of configuration Debug for project fig02_05 ****
+make clean 
+rm -rf ./src/fig02_05.d ./src/fig02_05.o
+rm -rf fig02_05
+ 
+
+11:33:02 Build Finished. 0 errors, 0 warnings. (took 703ms)
+
