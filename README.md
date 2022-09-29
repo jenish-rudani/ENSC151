@@ -7,13 +7,15 @@
 > Then, You can find the option to turn off auto sleep by clicking on ***Power Adapter*** menu on left panel of Battery window.
 
 > Check "Prevent your Mac from automatically sleeping when the display is off"
-![Sleep Turn Off Instructions on Power Adapter](pictures/Mac_System_Preferences.png?raw=true "Sleep Turn Off Instructions On Power Adapter")
+>
+>![Sleep Turn Off Instructions on Power Adapter](pictures/Mac_System_Preferences.png?raw=true "Sleep Turn Off Instructions On Power Adapter")
 
 ## How to open terminal App?
 > Press "Command Key and Spacebar" together and type Terminal.
 
 > Open the marked application as per the image below.
-![Terminal](pictures/terminalInstruction.png?raw=true "Terminal Instruction")
+>
+>![Terminal](pictures/terminalInstruction.png?raw=true "Terminal Instruction")
 
 ## Homebrew Installation Instructions
 
@@ -45,7 +47,10 @@ sudo shutdown -r now
 ```
 
 ## Open Eclipse
-> In order to open Eclipse window, go to your ***DESKTOP*** on MacOs and double-click on startEclipse.command application
+> In order to open Eclipse window, go to your ***DESKTOP*** on MacOs and double-click on startEclipse.command application. *IF you are opening Eclipse for the first time, you will need to type 'yes' and press return.
+>
+> ![desktopCommand](pictures/desktopCommand.png?raw=true "desktopCommand")
+
 
 # Troubleshooting (Follow this if you run into some issues)
 
@@ -57,8 +62,9 @@ multipass list
 ```
 
 > It should give you and output ***similar*** to following. (Ip-address might be different on your machine!)
-![multipassListOutput](pictures/multipassListOutput.png?raw=true "multipassListOutput")
-> Take a note of Ip-Address under IPv4 (In my case it is 192.167.65.21)
+> 
+> ![multipassListOutput](pictures/multipassListOutput.png?raw=true "multipassListOutput")
+> Take a note of Ip-Address under IPv4 (In my case it is 192.168.65.21)
 
 
 > Now, just type in following command to finally start eclipse application. 
@@ -68,4 +74,5 @@ multipass list
 ssh -Y ubunutu@192.168.65.21 /home/ubuntu/eclipse/eclipse
 ```
 > You will need to type 'yes' and then press enter. 
-![sshFirstTimeOutput](pictures/sshFirstTimeOutput.png?raw=true "sshFirstTimeOutput")
+>
+>![sshFirstTimeOutput](pictures/sshFirstTimeOutput.png?raw=true "sshFirstTimeOutput")
