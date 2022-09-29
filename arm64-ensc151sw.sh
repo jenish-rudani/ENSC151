@@ -4,7 +4,6 @@ GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-
 ######### Homebrew
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -57,6 +56,8 @@ cp $SHELL_SCRIPT_TO_RUN_ON_INSTANCE $SHARED_DIR_PATH
 cp ./postEclipseInstallationCommands.sh $SHARED_DIR_PATH
 cp -R src $SHARED_DIR_PATH
 cp -R eclipse-workspace_22-06 $SHARED_DIR_PATH
+chmod a+x startEclipse.command
+cp startEclipse.command ~/Desktop/
 ######### SSH Directory
 if [ -d $SSH_DIR_PATH ] 
 then
