@@ -45,7 +45,11 @@ sudo shutdown -r now
 ```
 
 ## Open Eclipse
-> In order to open Eclipse window you will need the IP Address of the Multipass Instance
+> In order to open Eclipse window, go to your ***DESKTOP*** on MacOs and double-click on startEclipse.command application
+
+# Troubleshooting (Follow this if you run into some issues)
+
+> If the application to run Eclipse fails, you will need the IP Address of the Multipass Instance
 > Type in following command in terminal to retrieve the ip address.
 
 ```bash
