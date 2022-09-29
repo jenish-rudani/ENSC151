@@ -143,3 +143,7 @@ multipass exec primary --working-directory /home/ubuntu -- rm VMsf/eclipse-cpp-2
 # ########## Changin default user space in Eclipse
 multipass mount $SHARED_DIR_PATH primary:/home/ubuntu/VMsf
 multipass exec primary --working-directory /home/ubuntu/VMsf -- source /home/ubuntu/VMsf/postEclipseInstallationCommands.sh
+echo ""
+echo ""
+echo ""
+echo "###### RESRTART YOUR MACBOOK ######"
