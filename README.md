@@ -58,7 +58,7 @@ multipass list
 
 > It should give you and output ***similar*** to following. (Ip-address might be different on your machine!)
 ![multipassListOutput](pictures/multipassListOutput.png?raw=true "multipassListOutput")
-> Take a note of Ip-Address under IPv4 (In my case it is 192.168.65.21)
+> Take a note of Ip-Address under IPv4 (In my case it is 192.167.65.21)
 
 
 > Now, just type in following command to finally start eclipse application. 
