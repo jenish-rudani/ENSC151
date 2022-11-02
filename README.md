@@ -51,6 +51,8 @@ sudo shutdown -r now
 >
 > ![desktopCommand](pictures/desktopCommand.png?raw=true "desktopCommand")
 
+## Where to FIND Shared Directory?
+> Shared directory that is used to transfer files/projects from host computer to virtual machine hosted on Multipasscan be found under ***~/Public/VMsf-22_04***. Please note that ***~*** (tilde) is a Linux "shortcut" to denote a user's home directory.
 
 # Troubleshooting (Follow this if you run into some issues)
 
