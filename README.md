@@ -52,7 +52,7 @@ sudo shutdown -r now
 > ![desktopCommand](pictures/desktopCommand.png?raw=true "desktopCommand")
 
 ## Where to FIND Shared Directory?
-> Shared directory that is used to transfer files/projects from host computer to virtual machine hosted on Multipasscan be found under ***~/Public/VMsf-22_04***. Please note that ***~*** (tilde) is a Linux "shortcut" to denote a user's home directory.
+Shared directory that is used to transfer files/projects between host OS (MacOS on ARM-based Mac) and Ubuntu Linux virtual machine hosted on Multipass can be found in MacOS under ~/Public/VMsf-22_04. Please note that ~ (tilde) is a "shortcut" to denote a respective user's home directory on both MacOS and Linux (and other Unix-based OSes).
 
 # Troubleshooting (Follow this if you run into some issues)
 
