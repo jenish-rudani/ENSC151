@@ -55,6 +55,8 @@ sudo shutdown -r now
 > Copy icon.avif from ***icon*** directory to Desktop
 > On your MacOS Desktop follow following GIF to assign the icon for the script
 > You can open **get info** menu by Right clicking on startEclipse.command script which is on your MacOS Desktop
+> ![iconAssignmentInstruction](pictures/iconAssignmentInstruction.gif)
+
 
 ## Where to FIND Shared Directory?
 Shared directory that is used to transfer files/projects between host OS (MacOS on ARM-based Mac) and Ubuntu Linux virtual machine hosted on Multipass can be found in MacOS under ~/Public/VMsf-22_04. Please note that ~ (tilde) is a "shortcut" to denote a respective user's home directory on both MacOS and Linux (and other Unix-based OSes).
