@@ -54,9 +54,11 @@ sudo shutdown -r now
 # Assigning Icon to startEclipse.command
 > Copy icon.avif from ***icon*** directory to Desktop
 > 
-> On your MacOS Desktop follow following GIF to assign the icon for the script
+> On your MacOS Desktop follow following GIF to assign the icon for the script. You should hit play if GIF below doesn't autoplay
 > 
-> You can open **get info** menu by Right clicking on startEclipse.command script which is on your MacOS Desktop
+> You can open **get info** menu by Right clicking on startEclipse.command script. Then, you can just drag and drop icon.avif over to the empty icon in get info menu
+>
+> In case if you would like to delete the icon, you can simply click on the icon in the get info menu and click CMD+DELETE. THat will revert icon to default look.
 > 
 > ![iconAssignmentInstruction](pictures/iconAssignmentInstruction.gif)
 
