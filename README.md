@@ -53,8 +53,11 @@ sudo shutdown -r now
 
 # Assigning Icon to startEclipse.command
 > Copy icon.avif from ***icon*** directory to Desktop
+> 
 > On your MacOS Desktop follow following GIF to assign the icon for the script
+> 
 > You can open **get info** menu by Right clicking on startEclipse.command script which is on your MacOS Desktop
+> 
 > ![iconAssignmentInstruction](pictures/iconAssignmentInstruction.gif)
 
 
