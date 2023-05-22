@@ -135,10 +135,12 @@ multipass exec primary --working-directory /home/ubuntu -- sudo apt-get install 
 # # don't need this
 # # multipass exec primary -- sudo apt install -y openjdk-8-jre # // do we need more (or less), like (only) openjdk-8-jre-headless
 
+
 ########## Installing Eclipse
-multipass exec primary --working-directory /home/ubuntu/VMsf -- wget https://eclipse.mirror.rafal.ca/technology/epp/downloads/release/2022-06/R/eclipse-cpp-2022-06-R-linux-gtk-aarch64.tar.gz
-multipass exec primary --working-directory /home/ubuntu -- tar -xvzf VMsf/eclipse-cpp-2022-06-R-linux-gtk-aarch64.tar.gz >> tar.log
-multipass exec primary --working-directory /home/ubuntu -- rm VMsf/eclipse-cpp-2022-06-R-linux-gtk-aarch64.tar.gz
+
+multipass exec primary --working-directory /home/ubuntu/VMsf -- wget https://eclipse.mirror.rafal.ca/technology/epp/downloads/release/2022-12/R/eclipse-cpp-2022-12-R-linux-gtk-aarch64.tar.gz
+multipass exec primary --working-directory /home/ubuntu -- tar -xvzf VMsf/eclipse-cpp-2022-12-R-linux-gtk-aarch64.tar.gz >> tar.log
+multipass exec primary --working-directory /home/ubuntu -- rm VMsf/eclipse-cpp-2022-12-R-linux-gtk-aarch64.tar.gz
 
 # ########## Changin default user space in Eclipse
 multipass mount $SHARED_DIR_PATH primary:/home/ubuntu/VMsf
