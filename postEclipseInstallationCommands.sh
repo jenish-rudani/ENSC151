@@ -9,7 +9,7 @@
 
 
 cd ~/eclipse
-sed -i 's/-Dosgi.instance.area.default=@user.home\/eclipse-workspace/-Dosgi.instance.area.default=\/home\/ubuntu\/VMsf\/eclipse-workspace_22-06/g' eclipse.ini
+sed -i 's/-Dosgi.instance.area.default=@user.home\/eclipse-workspace/-Dosgi.instance.area.default=\/home\/ubuntu\/VMsf\/eclipse-workspace_23-09/g' eclipse.ini
 
 cd ~/VMsf/src/CPlusPlus20ForProgrammers-master/examples/libraries
 find ./ -name 'CMakeCache.txt' -delete
@@ -25,7 +25,7 @@ sudo make install
 make clean
 cd ../fmt
 cmake .
-make
+ make
 sudo make install
 make clean
 cmake . -DCMAKE_BUILD_TYPE=Debug
