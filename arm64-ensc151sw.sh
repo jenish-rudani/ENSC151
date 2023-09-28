@@ -44,8 +44,8 @@ else
   echo -e "${RED}Multipass is Already Installed.${NC} [SKIPPING]"
 fi
  
-mkdir -p ~/Public/VMsf-22_04
-SHARED_DIR_PATH=~/Public/VMsf-22_04
+mkdir -p ~/Public/VMsf-23_04
+SHARED_DIR_PATH=~/Public/VMsf-23_04
 SHELL_SCRIPT_TO_RUN_ON_INSTANCE=./instanceCommandsClean.sh
 SSH_DIR_PATH=~/.ssh
 
@@ -63,7 +63,7 @@ fi
 cp $SHELL_SCRIPT_TO_RUN_ON_INSTANCE $SHARED_DIR_PATH
 cp ./postEclipseInstallationCommands.sh $SHARED_DIR_PATH
 cp -R src $SHARED_DIR_PATH
-cp -R eclipse-workspace_22-06 $SHARED_DIR_PATH
+cp -R eclipse-workspace_23-09 $SHARED_DIR_PATH
 chmod a+x startEclipse.command
 cp startEclipse.command ~/Desktop/
 ######### SSH Directory
@@ -107,7 +107,7 @@ fi
 
 ########## Create Primary Instances
 echo -e "${GREEN}Creating 'primary instance'${NC}"
-multipass launch 22.04 -n primary -c 4 -m 4G -d 50G 
+multipass launch 23.04 -n primary -c 4 -m 4G -d 50G 
 
 multipass exec primary -- bash -c "echo `cat $RSA_KEY_FILE_PATH.pub` >> ~/.ssh/authorized_keys"
 
@@ -138,9 +138,9 @@ multipass exec primary --working-directory /home/ubuntu -- sudo apt-get install 
 
 ########## Installing Eclipse
 
-multipass exec primary --working-directory /home/ubuntu/VMsf -- wget https://eclipse.mirror.rafal.ca/technology/epp/downloads/release/2022-12/R/eclipse-cpp-2022-12-R-linux-gtk-aarch64.tar.gz
-multipass exec primary --working-directory /home/ubuntu -- tar -xvzf VMsf/eclipse-cpp-2022-12-R-linux-gtk-aarch64.tar.gz >> tar.log
-multipass exec primary --working-directory /home/ubuntu -- rm VMsf/eclipse-cpp-2022-12-R-linux-gtk-aarch64.tar.gz
+multipass exec primary --working-directory /home/ubuntu/VMsf -- wget https://eclipse.mirror.rafal.ca/technology/epp/downloads/release/2023-09/R/eclipse-cpp-2023-09-R-linux-gtk-aarch64.tar.gz
+multipass exec primary --working-directory /home/ubuntu -- tar -xvzf VMsf/eclipse-cpp-2023-09-R-linux-gtk-aarch64.tar.gz >> tar.log
+multipass exec primary --working-directory /home/ubuntu -- rm VMsf/eclipse-cpp-2023-09-R-linux-gtk-aarch64.tar.gz
 
 # ########## Changin default user space in Eclipse
 multipass mount $SHARED_DIR_PATH primary:/home/ubuntu/VMsf

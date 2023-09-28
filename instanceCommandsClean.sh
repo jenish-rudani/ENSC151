@@ -29,5 +29,4 @@ sudo ln -s /home/ubuntu /home/xubuntu
 #  update /home/ubuntu/eclipse so that 
 #-Dosgi.instance.area.default=@user.home/eclipse-workspace
 #  becomes
-#-Dosgi.instance.area.default=/home/ubuntu/VMsf/eclipse-workspace-22-06
-
+#-Dosgi.instance.area.default=/home/ubuntu/VMsf/eclipse-workspace-22-10
